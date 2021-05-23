@@ -20,18 +20,29 @@ class SearchScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  Icon(Icons.search , color: Colors.white,),
+                  Icon(
+                    Icons.search,
+                    color: Colors.white,
+                  ),
                   Container(
                     width: MediaQuery.of(context).size.width * 0.70,
                     child: TextField(
                       style: TextStyle(color: Colors.white),
                       decoration: InputDecoration(
-                        hintStyle: TextStyle(color: Colors.white,),
-                        labelStyle: TextStyle(color: Colors.white,),
-                          hintText: 'Search', border: UnderlineInputBorder()),
+                          hintStyle: TextStyle(
+                            color: Colors.white,
+                          ),
+                          labelStyle: TextStyle(
+                            color: Colors.white,
+                          ),
+                          hintText: 'Search',
+                          border: UnderlineInputBorder()),
                     ),
                   ),
-                  Icon(Icons.settings_overscan , color: Colors.white,),
+                  Icon(
+                    Icons.settings_overscan,
+                    color: Colors.white,
+                  ),
                 ],
               ),
             ),
@@ -52,11 +63,17 @@ class SearchScreen extends StatelessWidget {
                     ),
                     child: Row(
                       children: <Widget>[
-                        Icon(filter['icon'] , color: Colors.white,),
+                        Icon(
+                          filter['icon'],
+                          color: Colors.white,
+                        ),
                         SizedBox(
                           width: MediaQuery.of(context).size.width * 0.01,
                         ),
-                        Text(filter['text'] , style: TextStyle(color: Colors.white),),
+                        Text(
+                          filter['text'],
+                          style: TextStyle(color: Colors.white),
+                        ),
                       ],
                     ),
                   );

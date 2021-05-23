@@ -4,13 +4,12 @@ import 'package:instagram_ui/models/post_model.dart';
 import 'package:instagram_ui/pageViews/view_post_screen.dart';
 
 class FeedScreen extends StatefulWidget {
-
   @override
   _FeedScreenState createState() => _FeedScreenState();
 }
 
 class _FeedScreenState extends State<FeedScreen> {
-   Widget _buildPost(int index) {
+  Widget _buildPost(int index) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
       child: Container(
@@ -58,9 +57,15 @@ class _FeedScreenState extends State<FeedScreen> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    subtitle: Text(posts[index].timeAgo , style: TextStyle(color: Colors.white),),
+                    subtitle: Text(
+                      posts[index].timeAgo,
+                      style: TextStyle(color: Colors.white),
+                    ),
                     trailing: IconButton(
-                      icon: Icon(Icons.more_vert , color: Colors.white,),
+                      icon: Icon(
+                        Icons.more_vert,
+                        color: Colors.white,
+                      ),
                       color: Colors.black,
                       onPressed: () => print('More'),
                     ),
@@ -107,7 +112,10 @@ class _FeedScreenState extends State<FeedScreen> {
                             Row(
                               children: <Widget>[
                                 IconButton(
-                                  icon: Icon(Icons.favorite_border , color: Colors.white,),
+                                  icon: Icon(
+                                    Icons.favorite_border,
+                                    color: Colors.white,
+                                  ),
                                   iconSize: 30.0,
                                   onPressed: () => print('Like post'),
                                 ),
@@ -125,7 +133,10 @@ class _FeedScreenState extends State<FeedScreen> {
                             Row(
                               children: <Widget>[
                                 IconButton(
-                                  icon: Icon(Icons.chat , color: Colors.white,),
+                                  icon: Icon(
+                                    Icons.chat,
+                                    color: Colors.white,
+                                  ),
                                   iconSize: 30.0,
                                   onPressed: () {
                                     Navigator.push(
@@ -151,7 +162,10 @@ class _FeedScreenState extends State<FeedScreen> {
                           ],
                         ),
                         IconButton(
-                          icon: Icon(Icons.bookmark_border , color: Colors.white,),
+                          icon: Icon(
+                            Icons.bookmark_border,
+                            color: Colors.white,
+                          ),
                           iconSize: 30.0,
                           onPressed: () => print('Save post'),
                         ),
@@ -171,70 +185,72 @@ class _FeedScreenState extends State<FeedScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kScaffoldBackgroundColor,
-     appBar: AppBar(
-       backgroundColor: kScaffoldBackgroundColor,
-       title:  Text(
-                    'Instagram',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontFamily: 'Billabong',
-                      fontSize: 32.0,
-                    ),
-                  ),
-                  actions: [
-                    IconButton(
-                          icon: Icon(Icons.send , color: Colors.white,),
-                          iconSize: 30.0,
-                          onPressed: () => print('Direct Messages'),
-                        ),
-                  ],
-     ),
+      appBar: AppBar(
+        backgroundColor: kScaffoldBackgroundColor,
+        title: Text(
+          'Instagram',
+          style: TextStyle(
+            color: Colors.white,
+            fontFamily: 'Billabong',
+            fontSize: 32.0,
+          ),
+        ),
+        actions: [
+          IconButton(
+            icon: Icon(
+              Icons.send,
+              color: Colors.white,
+            ),
+            iconSize: 30.0,
+            onPressed: () => print('Direct Messages'),
+          ),
+        ],
+      ),
       body: ListView(
-          physics: AlwaysScrollableScrollPhysics(),
-          children: <Widget>[
-           
-            Container(
-              width: double.infinity,
-              height: 100.0,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: stories.length + 1,
-                itemBuilder: (BuildContext context, int index) {
-                  if (index == 0) {
-                    return SizedBox(width: 10.0);
-                  }
-                  return Container(
-                    margin: EdgeInsets.all(10.0),
-                    width: 60.0,
-                    height: 60.0,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black45,
-                          offset: Offset(0, 2),
-                          blurRadius: 6.0,
-                        ),
-                      ],
-                    ),
-                    child: CircleAvatar(
-                      child: ClipOval(
-                        child: Image(
-                          height: 60.0,
-                          width: 60.0,
-                          image: AssetImage(stories[index - 1]),
-                          fit: BoxFit.cover,
-                        ),
+        physics: AlwaysScrollableScrollPhysics(),
+        children: <Widget>[
+          Container(
+            width: double.infinity,
+            height: 100.0,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: stories.length + 1,
+              itemBuilder: (BuildContext context, int index) {
+                if (index == 0) {
+                  return SizedBox(width: 10.0);
+                }
+                return Container(
+                  margin: EdgeInsets.all(10.0),
+                  width: 60.0,
+                  height: 60.0,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black45,
+                        offset: Offset(0, 2),
+                        blurRadius: 6.0,
+                      ),
+                    ],
+                  ),
+                  child: CircleAvatar(
+                    child: ClipOval(
+                      child: Image(
+                        height: 60.0,
+                        width: 60.0,
+                        image: AssetImage(stories[index - 1]),
+                        fit: BoxFit.cover,
                       ),
                     ),
-                  );
-                },
-              ),
+                  ),
+                );
+              },
             ),
-            _buildPost(0),
-            _buildPost(1),
-          ],
-        ),
+          ),
+          _buildPost(0),
+          _buildPost(1),
+        ],
+      ),
     );
   }
 }

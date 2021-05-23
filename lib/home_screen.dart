@@ -10,38 +10,30 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
   PageController _pageController = new PageController();
   int _page = 0;
 
   void onPageChanged(int page) {
     setState(() {
-          _page = page;
-        });
+      _page = page;
+    });
   }
 
-   
-   void navigationTapped(int page) {
-   _pageController.jumpToPage(page);
-   }
- 
+  void navigationTapped(int page) {
+    _pageController.jumpToPage(page);
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kScaffoldBackgroundColor,
       body: PageView(
-        children: <Widget>[
-          FeedScreen(),
-          SearchScreen(),
-          ProfileScreen()
-        ],
-         controller: _pageController,
+        children: <Widget>[FeedScreen(), SearchScreen(), ProfileScreen()],
+        controller: _pageController,
         onPageChanged: onPageChanged,
         physics: NeverScrollableScrollPhysics(),
       ),
       bottomNavigationBar: ClipRRect(
-        
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(30.0),
           topRight: Radius.circular(30.0),
@@ -51,13 +43,11 @@ class _HomeScreenState extends State<HomeScreen> {
           items: [
             BottomNavigationBarItem(
               icon: Icon(
-                
                 Icons.dashboard,
                 size: 30.0,
                 color: _page == 0 ? Colors.blue : Colors.grey,
               ),
               label: 'Feed',
-              
             ),
             BottomNavigationBarItem(
               icon: Icon(
@@ -77,7 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ],
           onTap: navigationTapped,
-currentIndex: _page,
+          currentIndex: _page,
         ),
       ),
     );

@@ -8,4 +8,3 @@ const kSelectedBottomBarItemColor = Colors.white;
 const kPeopleId = TextStyle(fontSize: 16.5, fontWeight: FontWeight.w400 ,  color: Colors.white);
 const kNumberStyle = TextStyle(fontSize: 20,fontWeight: FontWeight.bold, color: Colors.white);
 const kDescStyle = TextStyle(fontSize: 15,  color: Colors.white);
-// Color(0xFF496872);

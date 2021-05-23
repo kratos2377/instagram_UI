@@ -8,7 +8,7 @@ class Post {
     required this.authorName,
     required this.authorImageUrl,
     required this.timeAgo,
-   required this.imageUrl,
+    required this.imageUrl,
   });
 }
 

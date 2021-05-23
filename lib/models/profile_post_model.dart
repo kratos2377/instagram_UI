@@ -1,7 +1,7 @@
 class ProfilePostModel {
   String imagePath = "";
 
-  ProfilePostModel( {required String imagePreviewPath }) {
+  ProfilePostModel({required String imagePreviewPath}) {
     this.imagePath = imagePreviewPath;
   }
 }
