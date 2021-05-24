@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:instagram_ui/models/comment_model.dart';
 import 'package:instagram_ui/models/post_model.dart';
 
-class ViewPostScreen extends StatefulWidget {
+class CommentScreen extends StatefulWidget {
   final Post post;
 
-  ViewPostScreen({required this.post});
+  CommentScreen({required this.post});
 
   @override
-  _ViewPostScreenState createState() => _ViewPostScreenState();
+  _CommentScreenState createState() => _CommentScreenState();
 }
 
-class _ViewPostScreenState extends State<ViewPostScreen> {
+class _CommentScreenState extends State<CommentScreen> {
   Widget _buildComment(int index) {
     return Padding(
       padding: EdgeInsets.all(10.0),

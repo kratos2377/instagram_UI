@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_ui/color_constants.dart';
 import 'package:instagram_ui/models/post_model.dart';
-import 'package:instagram_ui/pageViews/view_post_screen.dart';
+import 'package:instagram_ui/pageViews/comment_screen.dart';
 
 class FeedScreen extends StatefulWidget {
   @override
@@ -76,7 +76,7 @@ class _FeedScreenState extends State<FeedScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (_) => ViewPostScreen(
+                          builder: (_) => CommentScreen(
                             post: posts[index],
                           ),
                         ),
@@ -142,7 +142,7 @@ class _FeedScreenState extends State<FeedScreen> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (_) => ViewPostScreen(
+                                        builder: (_) => CommentScreen(
                                           post: posts[index],
                                         ),
                                       ),
